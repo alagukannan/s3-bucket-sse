@@ -45,15 +45,7 @@ cd ../
 
 ### Local development
 
-To test, run denied-party-check-worker sam app using the template template.dev.yaml and send in an event file as input.
-**Important**:  testMode must be set to true in the template.dev.yaml in order to return test data.
-
-```yaml
-Environment:
-        Variables:
-          shutOffFlag: false
-          testMode: true
-```          
+To test, run the below command
 
 Test the Lamda:
 
