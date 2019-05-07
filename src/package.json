@@ -1,0 +1,18 @@
+{
+  "name": "samBaseApp",
+  "version": "1.0.0",
+  "description": "base node.js lambda app",
+  "main": "index.js",
+  "repository": "",
+  "author": "alag6020@esri.com",
+  "scripts": {
+    "test-local": "sam local invoke 'samAppBase' -e ./tests/sample/scheduleEvent.json",
+    "clean": "rm -R node_modules",
+    "init": "npm install",
+    "build": "sam build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "aws-sdk": "^2.450.0"
+  }
+}

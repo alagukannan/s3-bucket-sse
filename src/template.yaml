@@ -1,0 +1,60 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: lambda to enable encryption by default.
+Resources:
+  s3EncryptDefault:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs8.10
+      CodeUri: .
+      Description: lambda to enable encryption by default.
+      MemorySize: 128
+      Timeout: 3
+      AutoPublishAlias : 'live'   
+      Events:
+        CloudWatchEvent1:
+          Type: CloudWatchEvent
+          Properties:
+            Pattern:
+              detail-type:
+                - AWS API Call via CloudTrail
+              source:
+                - aws.s3
+              detail:
+                eventSource:
+                  - s3.amazonaws.com
+                eventName:
+                  - DeleteBucketCors
+                  - DeleteBucketLifecycle
+                  - DeleteBucketPolicy
+                  - DeleteBucketReplication
+                  - DeleteBucketTagging
+                  - DeleteBucketWebsite
+                  - CreateBucket
+                  - PutBucketAcl
+                  - PutBucketCors
+                  - PutBucketLifecycle
+                  - PutBucketPolicy
+                  - PutBucketLogging
+                  - PutBucketNotification
+                  - PutBucketReplication
+                  - PutBucketTagging
+                  - PutBucketRequestPayment
+                  - PutBucketVersioning
+                  - PutBucketWebsite
+                  - PutBucketEncryption
+                  - DeleteBucketEncryption
+                  - PutBucketPublicAccessBlock
+      Policies:
+        - AWSLambdaBasicExecutionRole # Managed Policy
+        - Statement:
+          - Sid: S3EncryptionPolicy
+            Effect: Allow
+            Action:
+            - s3:PutEncryptionConfiguration
+            - s3:GetEncryptionConfiguration
+            Resource: '*'
+      Tags:
+        Name: s3Encryption
+

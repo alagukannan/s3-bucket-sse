@@ -1,0 +1,54 @@
+{
+    "version": "0",
+    "id": "645365ba-a30c-c97b-062d-67c13020f8d3",
+    "detail-type": "AWS API Call via CloudTrail",
+    "source": "aws.s3",
+    "account": "130076433161",
+    "time": "2019-05-06T21:27:31Z",
+    "region": "us-east-1",
+    "resources": [],
+    "detail": {
+        "eventVersion": "1.05",
+        "userIdentity": {
+            "type": "IAMUser",
+            "principalId": "AIDAIJAH4D2LFSVEKYU2W",
+            "arn": "arn:aws:iam::130076433161:user/AWSTraining",
+            "accountId": "130076433161",
+            "accessKeyId": "ASIAR4SJI3ME3ZLQOW6E",
+            "userName": "AWSTraining",
+            "sessionContext": {
+                "attributes": {
+                    "mfaAuthenticated": "true",
+                    "creationDate": "2019-05-06T20:30:52Z"
+                }
+            },
+            "invokedBy": "signin.amazonaws.com"
+        },
+        "eventTime": "2019-05-06T21:27:31Z",
+        "eventSource": "s3.amazonaws.com",
+        "eventName": "PutBucketTagging",
+        "awsRegion": "us-east-1",
+        "sourceIPAddress": "198.102.62.186",
+        "userAgent": "signin.amazonaws.com",
+        "requestParameters": {
+            "host": [
+                "s3.amazonaws.com"
+            ],
+            "tagging": [
+                ""
+            ],
+            "bucketName": "alphotos"
+        },
+        "responseElements": null,
+        "additionalEventData": {
+            "SignatureVersion": "SigV4",
+            "CipherSuite": "ECDHE-RSA-AES128-SHA",
+            "AuthenticationMethod": "AuthHeader",
+            "vpcEndpointId": "vpce-f40dc59d"
+        },
+        "requestID": "735012D320D032D0",
+        "eventID": "e6b8a1b7-f467-49b4-b47e-7f5d5881709a",
+        "eventType": "AwsApiCall",
+        "vpcEndpointId": "vpce-f40dc59d"
+    }
+}
