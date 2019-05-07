@@ -1,5 +1,5 @@
 # s3-enable-default-encryption-lambda-app
-
+ Simple AWS Lambda that enables S3 default AES256 encryption whenever a bucket is created or bucket properties are modified, if encryption isn't enabled by deafult.
 
 ```bash
 .
