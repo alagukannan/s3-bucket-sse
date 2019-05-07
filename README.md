@@ -10,7 +10,7 @@
 │   └── tests                   <-- Unit tests
 │       └── unit
 │           └── test_handler.js
-└── template.dev.yaml               <-- SAM DEV template
+└── template.yaml               <-- SAM DEV template
 ```
 
 ## Requirements
